@@ -1,0 +1,62 @@
+[
+ {
+  "date": "2026-11-01",
+  "opponent": "GSCC Bears",
+  "player": "Govardhan Mucharla",
+  "catches": 0,
+  "wk_catches": 1,
+  "stumpings": 0,
+  "ro_direct": 0,
+  "ro_indirect": 0
+ },
+ {
+  "date": "2026-11-01",
+  "opponent": "GSCC Bears",
+  "player": "Bilal Ahamad",
+  "catches": 1,
+  "wk_catches": 0,
+  "stumpings": 0,
+  "ro_direct": 0,
+  "ro_indirect": 0
+ },
+ {
+  "date": "2026-11-07",
+  "opponent": "BMCC Masters",
+  "player": "Govardhan Mucharla",
+  "catches": 0,
+  "wk_catches": 1,
+  "stumpings": 0,
+  "ro_direct": 0,
+  "ro_indirect": 0
+ },
+ {
+  "date": "2026-11-07",
+  "opponent": "BMCC Masters",
+  "player": "Bilal Ahamad",
+  "catches": 1,
+  "wk_catches": 0,
+  "stumpings": 0,
+  "ro_direct": 0,
+  "ro_indirect": 0
+ },
+ {
+  "date": "2026-11-07",
+  "opponent": "BMCC Masters",
+  "player": "Pranav Jain",
+  "catches": 1,
+  "wk_catches": 0,
+  "stumpings": 0,
+  "ro_direct": 0,
+  "ro_indirect": 0
+ },
+ {
+  "date": "2026-11-07",
+  "opponent": "BMCC Masters",
+  "player": "Arun Subramanian",
+  "catches": 1,
+  "wk_catches": 0,
+  "stumpings": 0,
+  "ro_direct": 0,
+  "ro_indirect": 0
+ }
+]

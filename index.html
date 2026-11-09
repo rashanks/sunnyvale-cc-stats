@@ -1,0 +1,1206 @@
+<!doctype html>
+<html lang="en" data-version="202611090942">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sunnyvale CC Leaderboards · 2026 Winter T20 PB · Division 2</title>
+<meta name="description" content="Season leaderboards, T20 impact stats and match reports for Sunnyvale CC in the NCCA 2026 Winter T20 PB, Division 2.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sunnyvale CC Leaderboards">
+<meta property="og:description" content="Season leaderboards, T20 impact stats and match reports for Sunnyvale CC in the NCCA 2026 Winter T20 PB, Division 2.">
+<meta property="og:url" content="https://rashanks.github.io/sunnyvale-cc-stats/">
+<meta name="theme-color" content="#F7F6F2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141413" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;display=swap">
+<style>
+  :root {
+    color-scheme: light dark;
+    --color-bg: #F7F6F2; --color-panel: #FFFFFF; --color-fg: #141413; --color-fg-muted: #5C5B56; --color-border-line: #E1DFD8;
+    --color-ok: #1F7A4D; --color-warn: #A35F00; --color-bad: #B42318;
+    --font-anthropic-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+    --font-anthropic-sans: 'Libre Franklin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --cds-font-size-caption: 0.8125rem; --cds-font-size-body: 0.9375rem; --cds-font-size-heading: 1.0625rem; --cds-font-size-title: 1.75rem;
+    --cds-font-weight-medium: 600;
+    --cds-gap-xs: 4px; --cds-gap-sm: 8px; --cds-gap-md: 16px; --cds-gap-xl: 40px;
+    --cds-pad-xs: 4px; --cds-pad-sm: 8px; --cds-pad-md: 12px; --cds-pad-lg: 20px;
+    --cds-radius: 6px; --cds-dur-slow: 240ms; --cds-ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+    --cds-shadow-popover: 0 16px 48px rgb(0 0 0 / 0.18);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-bg: #141413; --color-panel: #1D1C1A; --color-fg: #F2F0EA; --color-fg-muted: #ABA9A1; --color-border-line: #36352F;
+      --color-ok: #4CC38A; --color-warn: #E2A44C; --color-bad: #F07167;
+      --cds-shadow-popover: 0 16px 48px rgb(0 0 0 / 0.6);
+    }
+  }
+  html { background: var(--color-bg); -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--color-bg); color: var(--color-fg); font-family: var(--font-anthropic-sans); font-size: 16px; line-height: 1.45; -webkit-font-smoothing: antialiased; }
+  #dash-root { max-width: 1280px; margin: 0 auto; padding: clamp(16px, 4vw, 40px) clamp(14px, 4vw, 40px) 48px; box-sizing: border-box; }
+  button { font: inherit; color: inherit; }
+  .dash-skeleton { animation: dash-pulse 1.2s ease-in-out infinite; }
+  @keyframes dash-pulse { 50% { opacity: 0.45; } }
+  .site-foot { max-width: 1280px; margin: 0 auto; padding: 0 clamp(14px, 4vw, 40px) 40px; box-sizing: border-box; font-family: var(--font-anthropic-sans); font-size: 12.5px; color: var(--color-fg-muted); }
+  .site-foot a { color: inherit; }
+</style>
+<style>
+  .sv { font-family: var(--font-anthropic-sans); color: var(--color-fg); display: grid; gap: var(--cds-gap-xl); }
+  .sv-head h1 { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); margin: 0; line-height: 1.15; }
+  .sv-head .sv-series { color: var(--color-fg-muted); font-size: var(--cds-font-size-body); margin: var(--cds-gap-xs) 0 0; }
+  .sv-head .sv-takeaway { font-size: var(--cds-font-size-body); margin: var(--cds-gap-sm) 0 0; }
+  .sv-head .sv-takeaway b { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .sv-section { display: grid; gap: var(--cds-gap-md); }
+  .sv-section > header h2 { font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); margin: 0; }
+  .sv-section > header p { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); margin: var(--cds-gap-xs) 0 0; }
+  .sv-grid { display: grid; gap: var(--cds-gap-md); grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); }
+  .sv-top { display: grid; gap: var(--cds-gap-md); grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); align-items: start; }
+  .sv-card { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); display: flex; flex-direction: column; gap: var(--cds-gap-sm); min-width: 0; }
+  .sv-card h3 { font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); margin: 0; display: flex; align-items: center; gap: var(--cds-gap-sm); flex-wrap: wrap; }
+  .sv-card .sv-note { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); margin: 0; }
+  .sv-card .sv-note b { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .sv-pill { font-size: var(--cds-font-size-caption); font-weight: 400; color: var(--color-fg-muted); border: 1px solid var(--color-border-line); border-radius: 999px; padding: 0 var(--cds-pad-sm); line-height: 1.6; }
+  .sv-empty { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); margin: 0; }
+  .sv-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  .sv-board { width: 100%; border-collapse: collapse; }
+  .sv-board tbody { display: grid; min-height: 8rem; align-content: start; }
+  .sv-board tbody tr { display: grid; grid-template-columns: 2.25rem minmax(0, 1fr) auto; grid-template-areas: "rank player value" "rank detail value"; column-gap: var(--cds-gap-sm); align-items: center; padding: var(--cds-pad-sm) 0; border-top: 1px solid var(--color-border-line); }
+  .sv-board tbody tr:first-child { border-top: 0; }
+  .sv-board td { padding: 0; }
+  .sv-board td.sv-rank { grid-area: rank; display: grid; place-items: center; }
+  .sv-board td.sv-player { grid-area: player; font-weight: var(--cds-font-weight-medium); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .sv-board td.sv-detail { grid-area: detail; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .sv-board td.sv-detail:empty { display: none; }
+  .sv-board td.sv-value { grid-area: value; font-family: var(--font-anthropic-serif); font-size: var(--cds-font-size-heading); font-variant-numeric: tabular-nums; text-align: right; }
+  .sv-board tr.sv-notout td.sv-value::after { content: "*"; }
+  .sv-board tr.sv-r1 td.sv-value { font-size: var(--cds-font-size-title); }
+  .sv-icon { display: block; }
+  .sv-icon-1 { width: 32px; height: 32px; }
+  .sv-icon-2 { width: 25px; height: 25px; }
+  .sv-icon-3 { width: 23px; height: 23px; }
+  @media (prefers-reduced-motion: no-preference) {
+    .sv-board tr.sv-r1 .sv-icon-1 { animation: sv-pop var(--cds-dur-slow) var(--cds-ease-out) both; }
+    @keyframes sv-pop { from { transform: scale(.6) rotate(-8deg); opacity: 0; } to { transform: none; opacity: 1; } }
+  }
+
+  .sv-podium tbody { grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr)); gap: var(--cds-gap-md); min-height: 9rem; align-items: end; }
+  .sv-podium tbody tr { border-top: 0; padding: var(--cds-pad-md) var(--cds-pad-sm); grid-template-columns: minmax(0, 1fr); grid-template-areas: "rank" "player" "value" "detail"; justify-items: center; text-align: center; row-gap: 2px; border-radius: var(--cds-radius); background: var(--color-bg); border: 1px solid var(--color-border-line); }
+  .sv-podium tbody tr:first-child { border-top: 1px solid var(--color-border-line); }
+  .sv-podium td.sv-player, .sv-podium td.sv-detail { max-width: 100%; }
+  .sv-podium td.sv-value { text-align: center; }
+  .sv-podium .sv-icon-1 { width: 52px; height: 52px; }
+  .sv-podium .sv-icon-2 { width: 40px; height: 40px; }
+  .sv-podium .sv-icon-3 { width: 36px; height: 36px; }
+  .sv-podium tr.sv-r1 { padding-top: var(--cds-pad-lg); padding-bottom: var(--cds-pad-lg); }
+  @media (min-width: 40rem) {
+    .sv-podium tr.sv-r1 { order: 2; }
+    .sv-podium tr.sv-r2 { order: 1; }
+    .sv-podium tr.sv-r3 { order: 3; }
+  }
+
+  .sv-matches { display: grid; gap: var(--cds-gap-sm); min-height: 5rem; align-content: start; }
+  .sv-match { border-left: 3px solid var(--color-border-line); padding-left: var(--cds-pad-sm); }
+  .sv-match.sv-won { border-left-color: var(--color-ok); }
+  .sv-match.sv-lost { border-left-color: var(--color-bad); }
+  .sv-match summary { cursor: pointer; list-style: none; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; grid-template-areas: "date opp chev" "date res chev" "date score chev"; column-gap: var(--cds-gap-md); }
+  .sv-match summary::-webkit-details-marker { display: none; }
+  .sv-match .sv-date { grid-area: date; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); font-variant-numeric: tabular-nums; padding-top: 2px; }
+  .sv-match .sv-opp { grid-area: opp; font-weight: var(--cds-font-weight-medium); }
+  .sv-match .sv-opp::before { content: "vs "; color: var(--color-fg-muted); font-weight: 400; }
+  .sv-match .sv-res { grid-area: res; font-size: var(--cds-font-size-caption); }
+  .sv-match .sv-score { grid-area: score; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); font-variant-numeric: tabular-nums; display: flex; gap: var(--cds-gap-sm); flex-wrap: wrap; }
+  .sv-match .sv-chev { grid-area: chev; align-self: center; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); transition: transform var(--cds-dur-slow); }
+  .sv-match[open] .sv-chev { transform: rotate(180deg); }
+  .sv-match .sv-hint { color: var(--color-fg-muted); }
+  .sv-match-body { padding: var(--cds-pad-sm) 0 var(--cds-pad-sm); display: grid; gap: var(--cds-gap-sm); font-size: var(--cds-font-size-caption); }
+  .sv-match-body p { margin: 0; }
+  .sv-match-body .sv-headline { font-size: var(--cds-font-size-body); font-weight: var(--cds-font-weight-medium); }
+  .sv-match-body .sv-toss { color: var(--color-fg-muted); }
+  .sv-match-body h4 { margin: var(--cds-gap-xs) 0 0; font-size: var(--cds-font-size-caption); font-weight: 600; }
+  .sv-match-body ul { margin: 0; padding-left: 1.1rem; display: grid; gap: 2px; }
+  .sv-match-body .sv-pom { display: flex; align-items: center; gap: var(--cds-gap-sm); }
+  .sv-match-body .sv-pom .sv-icon { width: 20px; height: 20px; }
+  .sv-match-body a { color: inherit; }
+
+  .sv-notes { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+  .sv-notes summary { cursor: pointer; color: var(--color-fg); font-size: var(--cds-font-size-body); }
+  .sv-notes dl { display: grid; grid-template-columns: minmax(8rem, max-content) 1fr; gap: var(--cds-gap-xs) var(--cds-gap-md); margin: var(--cds-gap-md) 0 0; }
+  .sv-notes dt { color: var(--color-fg); font-weight: var(--cds-font-weight-medium); }
+  .sv-notes dd { margin: 0; }
+  .sv-notes b { font-weight: 600; color: var(--color-fg); }
+  .sv-notes a { color: inherit; }
+  @media (max-width: 30rem) { .sv-notes dl { grid-template-columns: 1fr; } .sv-notes dd { margin-bottom: var(--cds-gap-sm); } }
+
+  .sv-more { margin-left: auto; font: inherit; font-size: var(--cds-font-size-caption); font-weight: 400; color: var(--color-fg-muted); background: none; border: 1px solid var(--color-border-line); border-radius: 999px; padding: 0 var(--cds-pad-sm); line-height: 1.7; cursor: pointer; }
+  .sv-more::after { content: " ›"; }
+  .sv-card:has(table[data-board]) { cursor: pointer; transition: border-color var(--cds-dur-slow); }
+  .sv-card:has(table[data-board]):hover { border-color: var(--color-fg-muted); }
+  .sv-card:has(table[data-board]):hover .sv-more { color: var(--color-fg); border-color: var(--color-fg-muted); }
+
+  .sv-links { display: flex; flex-wrap: wrap; gap: var(--cds-gap-md); align-items: center; }
+  .sv-linkbtn { font: inherit; font-size: var(--cds-font-size-caption); font-weight: 600; color: var(--color-fg); background: none; border: 1px solid var(--color-border-line); border-radius: 999px; padding: 2px var(--cds-pad-sm); cursor: pointer; }
+  .sv-linkbtn:hover { border-color: var(--color-fg-muted); }
+
+  .sv-dialog { position: fixed; inset: 0; margin: auto; height: fit-content; padding: 0; border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); background: var(--color-panel); color: var(--color-fg); font-family: var(--font-anthropic-sans); width: min(44rem, calc(100vw - 2rem)); max-height: min(88vh, 56rem); box-shadow: var(--cds-shadow-popover); }
+  .sv-dialog:popover-open { display: flex; flex-direction: column; }
+  .sv-dialog::backdrop { background: rgb(0 0 0 / 0.45); }
+  .sv-dialog-head { display: flex; align-items: center; justify-content: space-between; gap: var(--cds-gap-md); padding: var(--cds-pad-md) var(--cds-pad-lg); border-bottom: 1px solid var(--color-border-line); }
+  .sv-dialog-kicker { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+  .sv-dialog-close { font: inherit; font-size: var(--cds-font-size-heading); line-height: 1; width: 2rem; height: 2rem; border-radius: 999px; border: 1px solid var(--color-border-line); background: none; color: var(--color-fg); cursor: pointer; }
+  .sv-dialog-body { padding: var(--cds-pad-lg); overflow: auto; display: grid; gap: var(--cds-gap-md); align-content: start; }
+  @media (max-width: 40rem) { .sv-dialog { width: 100vw; max-width: 100vw; height: 100dvh; max-height: 100dvh; margin: 0; border: 0; border-radius: 0; } }
+
+  .sv-full-title { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); margin: 0; line-height: 1.2; }
+  .sv-full-note, .sv-full-count { margin: 0; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+  .sv-full-sub { margin: var(--cds-gap-sm) 0 0; font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); }
+  .sv-full { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+  .sv-full th { text-align: left; font-size: var(--cds-font-size-caption); font-weight: 400; color: var(--color-fg-muted); padding: var(--cds-pad-xs) var(--cds-pad-sm); border-bottom: 1px solid var(--color-border-line); }
+  .sv-full th.sv-num { text-align: right; }
+  .sv-full th.sv-rank-h { width: 3rem; text-align: center; }
+  .sv-full td { padding: var(--cds-pad-sm); border-bottom: 1px solid var(--color-border-line); vertical-align: middle; }
+  .sv-full td.sv-rank { text-align: center; color: var(--color-fg-muted); }
+  .sv-full td.sv-rank .sv-icon { margin: 0 auto; }
+  .sv-full td.sv-player { font-weight: var(--cds-font-weight-medium); }
+  .sv-full td.sv-value { font-family: var(--font-anthropic-serif); font-size: var(--cds-font-size-heading); text-align: right; white-space: nowrap; }
+  .sv-full tr.sv-notout td.sv-value::after { content: "*"; }
+  .sv-full td.sv-detail { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+  .sv-full td.sv-need { font-size: var(--cds-font-size-caption); }
+  .sv-full.sv-waiting td.sv-player, .sv-full.sv-waiting td.sv-value { color: var(--color-fg-muted); }
+  @media (max-width: 30rem) { .sv-full td.sv-detail, .sv-full th.sv-detail-h { display: none; } }
+
+  .sv-rep-meta { margin: 0; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+  .sv-rep-head { margin: 0; font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); line-height: 1.2; }
+  .sv-rep-stand { margin: 0; font-style: italic; color: var(--color-fg-muted); font-size: var(--cds-font-size-body); }
+  .sv-rep-score { margin: 0; display: flex; flex-wrap: wrap; gap: var(--cds-gap-md); font-size: var(--cds-font-size-caption); font-variant-numeric: tabular-nums; font-weight: 600; }
+  .sv-rep-body p { margin: 0 0 var(--cds-gap-md); font-size: var(--cds-font-size-body); line-height: 1.65; }
+  .sv-rep-foot { border-top: 1px solid var(--color-border-line); padding-top: var(--cds-pad-md); display: grid; gap: var(--cds-gap-xs); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+  .sv-rep-foot p { margin: 0; }
+  .sv-rep-foot a { color: inherit; }
+
+  .sv-golden { --sv-gold: #F4C430; --sv-gold-dark: #B8860B; padding: var(--cds-pad-lg); border-radius: calc(var(--cds-radius) * 1.5); border: 1.5px solid color-mix(in srgb, var(--sv-gold) 65%, var(--sv-gold-dark)); background: linear-gradient(135deg, color-mix(in srgb, var(--sv-gold) 22%, var(--color-bg)), color-mix(in srgb, var(--sv-gold) 8%, var(--color-bg)) 55%, color-mix(in srgb, var(--sv-gold) 18%, var(--color-bg))); box-shadow: 0 0 0 4px color-mix(in srgb, var(--sv-gold) 12%, transparent); }
+  .sv-golden > header h2 { display: flex; align-items: center; gap: var(--cds-gap-sm); font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); color: color-mix(in srgb, var(--sv-gold-dark) 82%, var(--color-fg)); }
+  .sv-golden > header h2::before { content: "★"; color: var(--sv-gold); text-shadow: 0 0 1px var(--sv-gold-dark); }
+  .sv-golden > header p { color: color-mix(in srgb, var(--sv-gold-dark) 35%, var(--color-fg-muted)); }
+  .sv-golden .sv-card { border-color: color-mix(in srgb, var(--sv-gold) 55%, var(--color-border-line)); background: color-mix(in srgb, var(--sv-gold) 6%, var(--color-panel)); }
+  .sv-golden .sv-card:has(table[data-board]):hover { border-color: var(--sv-gold-dark); }
+  .sv-golden .sv-more { border-color: color-mix(in srgb, var(--sv-gold) 55%, var(--color-border-line)); }
+
+  [data-dash-source-state=refreshing] { opacity: .5; transition: opacity var(--cds-dur-slow); }
+  [data-dash-source-state=empty] { color: transparent; }
+
+  /* Editorial theme (2026-11-09): newspaper masthead, ruled sections, serif headings and figures, one red accent. */
+  .sv { --ed-accent: color-mix(in oklab, #C0262D 74%, var(--color-fg)); gap: clamp(2rem, 4vw, 3rem); }
+  .sv-mast { display: grid; gap: var(--cds-gap-sm); text-align: center; }
+  .sv-mast .sv-series { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; margin: 0; padding-bottom: 8px; border-bottom: 1px solid var(--color-fg); font-size: 11.5px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-fg-muted); }
+  .sv-mast .sv-series b { font-weight: 700; color: var(--color-fg); }
+  .sv-mast h1 { font-family: var(--font-anthropic-serif); font-weight: 500; font-size: clamp(2.4rem, 6.5vw, 4.6rem); line-height: 1; letter-spacing: -0.02em; margin: 0.15em 0 0.05em; }
+  .sv-mast .sv-takeaway { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 24px; margin: 0; padding: 10px 0; border-top: 1px solid var(--color-fg); border-bottom: 3px double var(--color-fg); font-size: var(--cds-font-size-body); }
+  .sv-mast .sv-takeaway b { font-weight: 700; }
+
+  .sv-section > header { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 18px; row-gap: 4px; border-top: 4px solid var(--color-fg); padding-top: 10px; }
+  .sv-section > header h2 { font-family: var(--font-anthropic-serif); font-weight: 500; font-size: clamp(1.7rem, 3.2vw, 2.2rem); line-height: 1.1; }
+  .sv-section > header p { margin: 0; }
+  .sv-golden { border: 0; border-top: 4px solid var(--sv-gold-dark); border-radius: 0; box-shadow: none; background: color-mix(in srgb, var(--sv-gold) 14%, var(--color-bg)); }
+  .sv-golden > header { border-top: 0; padding-top: 0; }
+  .sv-golden > header h2 { font-weight: 500; font-size: clamp(1.9rem, 3.6vw, 2.5rem); }
+  .sv-golden > header p { font-family: var(--font-anthropic-serif); font-style: italic; font-size: var(--cds-font-size-body); }
+
+  .sv-card { border-radius: 2px; border-top: 3px solid var(--color-fg); padding: 14px 16px 12px; }
+  .sv-card h3 { font-family: var(--font-anthropic-serif); font-weight: 500; font-size: 1.35rem; line-height: 1.2; }
+  #board-mvp h3, #results h3 { font-size: 1.75rem; }
+  .sv-card .sv-note { font-size: 12.5px; line-height: 1.45; }
+  .sv-card:has(table[data-board]):hover { border-color: var(--color-fg-muted); border-top-color: var(--ed-accent); }
+  .sv-golden .sv-card { background: var(--color-panel); border-top-color: var(--sv-gold-dark); }
+  .sv-golden .sv-card:has(table[data-board]):hover { border-color: var(--sv-gold-dark); }
+  .sv-more, .sv-golden .sv-more { font-family: var(--font-anthropic-sans); font-size: 12.5px; font-weight: 600; color: var(--ed-accent); border: 0; padding: 0; background: none; line-height: 1.4; }
+  .sv-card:has(table[data-board]):hover .sv-more { color: var(--ed-accent); text-decoration: underline; }
+
+  .sv-board tbody tr { padding: 9px 0; }
+  .sv-board td.sv-value { font-size: 1.4rem; line-height: 1; }
+  .sv-board tr.sv-r1 td.sv-player { font-weight: 700; }
+  .sv-board tr.sv-r1 td.sv-value { font-size: 2rem; }
+  .sv-podium td.sv-value { font-size: 1.6rem; }
+  .sv-podium tr.sv-r1 td.sv-value { font-size: 2.6rem; }
+
+  .sv-match { border-left-width: 4px; }
+  .sv-match .sv-date { text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+  .sv-match .sv-opp { font-family: var(--font-anthropic-serif); font-weight: 500; font-size: 1.15rem; }
+  .sv-match-body .sv-headline { font-family: var(--font-anthropic-serif); font-weight: 500; font-size: 1.25rem; line-height: 1.25; }
+  .sv-match-body > p:not(.sv-headline):not(.sv-toss):not(.sv-pom):not(.sv-links) { font-family: var(--font-anthropic-serif); font-size: var(--cds-font-size-body); line-height: 1.6; }
+  .sv-linkbtn { border: 1.5px solid var(--color-fg); border-radius: 2px; padding: 6px 12px; font-weight: 700; }
+  .sv-links a { color: var(--ed-accent); font-weight: 600; text-decoration: none; }
+
+  .sv-dialog { border-radius: 2px; border-top: 4px solid var(--color-fg); }
+  .sv-full-title { font-weight: 500; font-size: clamp(1.7rem, 4vw, 2.2rem); }
+  .sv-rep-meta { text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; color: var(--ed-accent); }
+  .sv-rep-head { font-weight: 500; font-size: clamp(1.8rem, 4.5vw, 2.5rem); line-height: 1.08; letter-spacing: -0.01em; }
+  .sv-rep-stand { font-family: var(--font-anthropic-serif); font-size: 1.15rem; line-height: 1.4; }
+  .sv-rep-score { padding: 8px 0; border-top: 1px solid var(--color-border-line); border-bottom: 1px solid var(--color-border-line); font-size: var(--cds-font-size-body); }
+  .sv-rep-body p { font-family: var(--font-anthropic-serif); font-size: 1.05rem; line-height: 1.65; }
+  .sv-notes summary { font-family: var(--font-anthropic-serif); font-size: 1.2rem; }
+</style>
+<style>
+  [hidden] { display: none !important; }
+  @media (max-width: 40rem) {
+    .sv-podium tbody { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+    .sv-podium tbody tr { padding: 10px 4px; }
+    .sv-podium tr.sv-r1 { order: 2; } .sv-podium tr.sv-r2 { order: 1; } .sv-podium tr.sv-r3 { order: 3; }
+    .sv-podium td.sv-player { font-size: 13px; white-space: normal; overflow-wrap: break-word; hyphens: auto; }
+    .sv-podium td.sv-detail { font-size: 11px; white-space: normal; }
+    .sv-podium td.sv-value { font-size: 1.35rem; }
+    .sv-podium tr.sv-r1 td.sv-value { font-size: 1.9rem; }
+  }
+</style>
+<script src="assets/dash-lite.js"></script>
+</head>
+<body>
+<main id="dash-root">
+<div class="sv">
+  <header class="sv-head sv-mast" id="top">
+    <p class="sv-series"><span>2026 Winter T20 PB · Division 2</span><span>Stats through <b data-draw="num" data-source="record" data-field="through">—</b></span></p>
+    <h1>Sunnyvale CC Leaderboards</h1>
+    <p class="sv-takeaway">
+      <span>Played <b data-draw="num" data-source="record" data-field="played">—</b></span>
+      <span>Won <b data-draw="num" data-source="record" data-field="won">—</b></span>
+      <span>Lost <b data-draw="num" data-source="record" data-field="lost">—</b></span>
+      <span><b data-draw="num" data-source="mvp" data-field="player" data-row="0">—</b> leads the MVP race</span>
+    </p>
+  </header>
+
+  <div class="sv-top">
+    <article class="sv-card" id="board-mvp">
+      <h3>Season MVP <button type="button" class="sv-more">See all</button></h3>
+      <p class="sv-note">Impact points: roughly one point per run of value, weighted for tempo, wicket quality and runs saved. See "How the boards work" below.</p>
+      <table class="sv-board sv-podium" data-board data-fmt="int" data-source="mvp" data-row-key="player">
+        <thead class="sv-sr"><tr><th data-field="rank">Rank</th><th data-field="player">Player</th><th data-field="value">Impact points</th><th data-field="detail">Breakdown</th></tr></thead>
+        <tbody data-draw="board" class="dash-skeleton"></tbody>
+      </table>
+      <p class="sv-empty" hidden>No impact points yet.</p>
+    </article>
+
+    <article class="sv-card" id="results">
+      <h3>Results</h3>
+      <p class="sv-note">Most recent first. Tap a match for its story and key contributions.</p>
+      <div class="sv-matches dash-skeleton" data-draw="matches" data-source="results match_mvp"></div>
+    </article>
+  </div>
+
+  <section class="sv-section sv-golden" id="golden">
+    <header>
+      <h2>T20 Impact stats</h2>
+      <p>The numbers that win T20 games: scoring tempo, boundaries, pressure with the ball and safe hands in the field.</p>
+    </header>
+    <div class="sv-grid">
+      <article class="sv-card" id="board-bpb">
+        <h3>Boundary hitter <button type="button" class="sv-more">See all</button></h3>
+        <p class="sv-note">Balls per boundary, lower is better · min <b data-draw="num" data-source="qual" data-field="min_balls">—</b> balls faced</p>
+        <table class="sv-board" data-board data-fmt="1" data-source="bpb" data-row-key="player">
+          <thead class="sv-sr"><tr><th data-field="rank">Rank</th><th data-field="player">Player</th><th data-field="value">Balls per boundary</th><th data-field="detail">Detail</th></tr></thead>
+          <tbody data-draw="board" class="dash-skeleton"></tbody>
+        </table>
+        <p class="sv-empty" hidden>Nobody qualifies yet.</p>
+      </article>
+
+      <article class="sv-card" id="board-busy">
+        <h3>Busiest batter <button type="button" class="sv-more">See all</button></h3>
+        <p class="sv-note">Dot balls faced per 6 balls, lower is better · min <b data-draw="num" data-source="qual" data-field="busy_min_balls">—</b> balls faced</p>
+        <table class="sv-board" data-board data-fmt="2" data-source="busy" data-row-key="player">
+          <thead class="sv-sr"><tr><th data-field="rank">Rank</th><th data-field="player">Player</th><th data-field="value">Dots per 6 balls</th><th data-field="detail">Detail</th></tr></thead>
+          <tbody data-draw="board" class="dash-skeleton"></tbody>
+        </table>
+        <p class="sv-empty" hidden>Nobody has faced enough balls yet.</p>
+      </article>
+
+      <article class="sv-card" id="board-pace">
+        <h3>Pace setter <button type="button" class="sv-more">See all</button></h3>
+        <p class="sv-note">Runs above what the team's average pace (SR <b data-draw="num" data-fmt="1" data-source="qual" data-field="team_sr">—</b>) gets from the same balls</p>
+        <table class="sv-board" data-board data-fmt="plus1" data-source="pace" data-row-key="player">
+          <thead class="sv-sr"><tr><th data-field="rank">Rank</th><th data-field="player">Player</th><th data-field="value">Runs above pace</th><th data-field="detail">Detail</th></tr></thead>
+          <tbody data-draw="board" class="dash-skeleton"></tbody>
+        </table>
+        <p class="sv-empty" hidden>Nobody is above team pace yet.</p>
+      </article>
+
+      <article class="sv-card" id="board-dot-pct">
+        <h3>Bowling dot ball % <button type="button" class="sv-more">See all</button></h3>
+        <p class="sv-note">Share of balls bowled that were dots · min <b data-draw="num" data-source="qual" data-field="dot_min_overs">—</b> overs</p>
+        <table class="sv-board" data-board data-fmt="pct" data-source="dot_pct" data-row-key="player">
+          <thead class="sv-sr"><tr><th data-field="rank">Rank</th><th data-field="player">Player</th><th data-field="value">Dot ball %</th><th data-field="detail">Detail</th></tr></thead>
+          <tbody data-draw="board" class="dash-skeleton"></tbody>
+        </table>
+        <p class="sv-empty" hidden>Nobody qualifies yet.</p>
+      </article>
+
+      <article class="sv-card" id="board-bowl-sr">
+        <h3>Best bowling strike rate <button type="button" class="sv-more">See all</button></h3>
+        <p class="sv-note">Balls per wicket · min <b data-draw="num" data-source="qual" data-field="min_overs">—</b> overs</p>
+        <table class="sv-board" data-board data-fmt="1" data-source="bowl_sr" data-row-key="player">
+          <thead class="sv-sr"><tr><th data-field="rank">Rank</th><th data-field="player">Player</th><th data-field="value">Balls per wicket</th><th data-field="detail">Detail</th></tr></thead>
+          <tbody data-draw="board" class="dash-skeleton"></tbody>
+        </table>
+        <p class="sv-empty" hidden>Nobody qualifies yet.</p>
+      </article>
+
+      <article class="sv-card" id="board-catches">
+        <h3>Most catches <button type="button" class="sv-more">See all</button></h3>
+        <p class="sv-note">Catches, including as wicketkeeper</p>
+        <table class="sv-board" data-board data-fmt="int" data-source="catches" data-row-key="player">
+          <thead class="sv-sr"><tr><th data-field="rank">Rank</th><th data-field="player">Player</th><th data-field="value">Catches</th><th data-field="detail">Detail</th></tr></thead>
+          <tbody data-draw="board" class="dash-skeleton"></tbody>
+        </table>
+        <p class="sv-empty" hidden>No catches yet.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="sv-section" id="batting">
+    <header>
+      <h2>Batting</h2>
+      <p>Totals and best innings. Tempo stats are in T20 Impact stats.</p>
+    </header>
+    <div class="sv-grid">
+      <article class="sv-card" id="board-runs">
+        <h3>Most runs <button type="button" class="sv-more">See all</button></h3>
+        <p class="sv-note">Total runs scored</p>
+        <table class="sv-board" data-board data-fmt="int" data-source="runs" data-row-key="player">
+          <thead class="sv-sr"><tr><th data-field="rank">Rank</th><th data-field="player">Player</th><th data-field="value">Runs</th><th data-field="detail">Detail</th></tr></thead>
+          <tbody data-draw="board" class="dash-skeleton"></tbody>
+        </table>
+        <p class="sv-empty" hidden>No runs yet.</p>
+      </article>
+
+      <article class="sv-card" id="board-sixes">
+        <h3>Most 6s <button type="button" class="sv-more">See all</button></h3>
+        <p class="sv-note">Sixes hit</p>
+        <table class="sv-board" data-board data-fmt="int" data-source="sixes" data-row-key="player">
+          <thead class="sv-sr"><tr><th data-field="rank">Rank</th><th data-field="player">Player</th><th data-field="value">Sixes</th><th data-field="detail">Detail</th></tr></thead>
+          <tbody data-draw="board" class="dash-skeleton"></tbody>
+        </table>
+        <p class="sv-empty" hidden>No sixes yet.</p>
+      </article>
+
+      <article class="sv-card" id="board-fours">
+        <h3>Most 4s <button type="button" class="sv-more">See all</button></h3>
+        <p class="sv-note">Fours hit</p>
+        <table class="sv-board" data-board data-fmt="int" data-source="fours" data-row-key="player">
+          <thead class="sv-sr"><tr><th data-field="rank">Rank</th><th data-field="player">Player</th><th data-field="value">Fours</th><th data-field="detail">Detail</th></tr></thead>
+          <tbody data-draw="board" class="dash-skeleton"></tbody>
+        </table>
+        <p class="sv-empty" hidden>No fours yet.</p>
+      </article>
+
+      <article class="sv-card" id="board-bat-sr">
+        <h3>Best strike rate <button type="button" class="sv-more">See all</button></h3>
+        <p class="sv-note">Runs per 100 balls · min <b data-draw="num" data-source="qual" data-field="min_balls">—</b> balls faced</p>
+        <table class="sv-board" data-board data-fmt="1" data-source="bat_sr" data-row-key="player">
+          <thead class="sv-sr"><tr><th data-field="rank">Rank</th><th data-field="player">Player</th><th data-field="value">Strike rate</th><th data-field="detail">Detail</th></tr></thead>
+          <tbody data-draw="board" class="dash-skeleton"></tbody>
+        </table>
+        <p class="sv-empty" hidden>Nobody has faced enough balls yet.</p>
+      </article>
+
+      <article class="sv-card" id="board-hs">
+        <h3>Highest score <button type="button" class="sv-more">See all</button></h3>
+        <p class="sv-note">Best single innings this season · * not out</p>
+        <table class="sv-board" data-board data-fmt="int" data-source="hs" data-row-key="player,date">
+          <thead class="sv-sr"><tr><th data-field="rank">Rank</th><th data-field="player">Player</th><th data-field="value">Runs</th><th data-field="detail">Detail</th></tr></thead>
+          <tbody data-draw="board" class="dash-skeleton"></tbody>
+        </table>
+        <p class="sv-empty" hidden>No innings yet.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="sv-section" id="bowling">
+    <header>
+      <h2>Bowling</h2>
+      <p>For economy and extras, lower is better.</p>
+    </header>
+    <div class="sv-grid">
+      <article class="sv-card" id="board-wkts">
+        <h3>Most wickets <button type="button" class="sv-more">See all</button></h3>
+        <p class="sv-note">Wickets taken</p>
+        <table class="sv-board" data-board data-fmt="int" data-source="wkts" data-row-key="player">
+          <thead class="sv-sr"><tr><th data-field="rank">Rank</th><th data-field="player">Player</th><th data-field="value">Wickets</th><th data-field="detail">Detail</th></tr></thead>
+          <tbody data-draw="board" class="dash-skeleton"></tbody>
+        </table>
+        <p class="sv-empty" hidden>No wickets yet.</p>
+      </article>
+
+      <article class="sv-card" id="board-dots">
+        <h3>Most dot balls <button type="button" class="sv-more">See all</button></h3>
+        <p class="sv-note">Dot balls bowled</p>
+        <table class="sv-board" data-board data-fmt="int" data-source="dots" data-row-key="player">
+          <thead class="sv-sr"><tr><th data-field="rank">Rank</th><th data-field="player">Player</th><th data-field="value">Dot balls</th><th data-field="detail">Detail</th></tr></thead>
+          <tbody data-draw="board" class="dash-skeleton"></tbody>
+        </table>
+        <p class="sv-empty" hidden>No dot balls recorded yet.</p>
+      </article>
+
+      <article class="sv-card" id="board-econ">
+        <h3>Best economy <button type="button" class="sv-more">See all</button></h3>
+        <p class="sv-note">Runs per over · min <b data-draw="num" data-source="qual" data-field="min_overs">—</b> overs</p>
+        <table class="sv-board" data-board data-fmt="2" data-source="econ" data-row-key="player">
+          <thead class="sv-sr"><tr><th data-field="rank">Rank</th><th data-field="player">Player</th><th data-field="value">Economy</th><th data-field="detail">Detail</th></tr></thead>
+          <tbody data-draw="board" class="dash-skeleton"></tbody>
+        </table>
+        <p class="sv-empty" hidden>Nobody has bowled enough overs yet.</p>
+      </article>
+
+      <article class="sv-card" id="board-runs-saved">
+        <h3>Runs saved <span class="sv-pill">Impact</span> <button type="button" class="sv-more">See all</button></h3>
+        <p class="sv-note">Runs conceded below the team's economy of <b data-draw="num" data-fmt="2" data-source="qual" data-field="team_econ">—</b> per over</p>
+        <table class="sv-board" data-board data-fmt="plus1" data-source="runs_saved" data-row-key="player">
+          <thead class="sv-sr"><tr><th data-field="rank">Rank</th><th data-field="player">Player</th><th data-field="value">Runs saved</th><th data-field="detail">Detail</th></tr></thead>
+          <tbody data-draw="board" class="dash-skeleton"></tbody>
+        </table>
+        <p class="sv-empty" hidden>Nobody is below team economy yet.</p>
+      </article>
+
+      <article class="sv-card" id="board-clean">
+        <h3>Cleanest bowler <span class="sv-pill">Impact</span> <button type="button" class="sv-more">See all</button></h3>
+        <p class="sv-note">Wides + no-balls per over · min <b data-draw="num" data-source="qual" data-field="min_overs">—</b> overs</p>
+        <table class="sv-board" data-board data-fmt="2" data-source="clean" data-row-key="player">
+          <thead class="sv-sr"><tr><th data-field="rank">Rank</th><th data-field="player">Player</th><th data-field="value">Extras per over</th><th data-field="detail">Detail</th></tr></thead>
+          <tbody data-draw="board" class="dash-skeleton"></tbody>
+        </table>
+        <p class="sv-empty" hidden>Nobody qualifies yet.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="sv-section" id="fielding" hidden>
+    <header>
+      <h2>Fielding</h2>
+      <p>Catches win matches.</p>
+    </header>
+    <div class="sv-grid">
+      <article class="sv-card" id="board-dismissals" hidden>
+        <h3>Most dismissals <button type="button" class="sv-more">See all</button></h3>
+        <p class="sv-note">Catches + run-outs + stumpings</p>
+        <table class="sv-board" data-board data-fmt="int" data-source="dismissals" data-row-key="player">
+          <thead class="sv-sr"><tr><th data-field="rank">Rank</th><th data-field="player">Player</th><th data-field="value">Dismissals</th><th data-field="detail">Detail</th></tr></thead>
+          <tbody data-draw="board" class="dash-skeleton"></tbody>
+        </table>
+      </article>
+    </div>
+  </section>
+
+  <details class="sv-notes" id="how">
+    <summary>How the boards work</summary>
+    <dl>
+      <dt>Season MVP</dt>
+      <dd>Impact points, added up match by match. One point is roughly one run of value, so batting, bowling and fielding share one scale. This follows the idea behind ESPNcricinfo's Smart Stats and CricViz's Match Impact, simplified to what CricClubs records.</dd>
+      <dt>Batting points</dt>
+      <dd>Runs × a pace factor. The pace factor is the square root of your strike rate divided by that match's overall strike rate, kept between <b data-draw="num" data-fmt="1" data-source="impact_rules" data-field="pace_min">—</b> and <b data-draw="num" data-fmt="1" data-source="impact_rules" data-field="pace_max">—</b>. So 40 off 20 counts for more than 40 off 45, and a fast 30 on a slow pitch counts for more than on a flat one.</dd>
+      <dt>Bowling points</dt>
+      <dd>Each wicket is worth <b data-draw="num" data-source="impact_rules" data-field="wicket_top">—</b> if the batter batted in the top 4, <b data-draw="num" data-source="impact_rules" data-field="wicket_mid">—</b> at 5–7, and <b data-draw="num" data-source="impact_rules" data-field="wicket_tail">—</b> at 8–11. You also get runs saved: what an average bowler in that match would have conceded from your balls, minus what you actually conceded. An expensive spell can go negative.</dd>
+      <dt>Fielding points</dt>
+      <dd><b data-draw="num" data-source="impact_rules" data-field="catch">—</b> per catch (keeper catches included), <b data-draw="num" data-source="impact_rules" data-field="stumping">—</b> per stumping or direct run-out, and <b data-draw="num" data-source="impact_rules" data-field="ro_indirect">—</b> for a run-out assist.</dd>
+      <dt>Top 3 and trophies</dt>
+      <dd>Gold trophy for 1st, silver trophy for 2nd, bronze medal for 3rd. Anyone tied with a podium place gets the same award, so a card can show more than three names. Highest score ranks single innings, so one player can hold two spots.</dd>
+      <dt>Minimums</dt>
+      <dd>Rate boards only include players with enough of a sample: <b data-draw="num" data-source="qual" data-field="min_balls">—</b> balls faced for batting rates and <b data-draw="num" data-source="qual" data-field="min_overs">—</b> overs for bowling rates. Both grow with matches played (<b data-draw="num" data-source="qual" data-field="balls_per_match">—</b> balls and <b data-draw="num" data-source="qual" data-field="overs_per_match">—</b> overs per match), capped at <b data-draw="num" data-source="qual" data-field="balls_cap">—</b> balls and <b data-draw="num" data-source="qual" data-field="overs_cap">—</b> overs. Busiest batter uses a fixed minimum of <b data-draw="num" data-source="qual" data-field="busy_min_balls">—</b> balls, and Bowling dot ball % a fixed minimum of <b data-draw="num" data-source="qual" data-field="dot_min_overs">—</b> overs.</dd>
+      <dt>Busiest batter</dt>
+      <dd>Dot balls faced (no runs off the bat, leg-byes included) per 6 balls faced, counted from the ball-by-ball commentary.</dd>
+      <dt>Pace setter</dt>
+      <dd>Your runs minus what the team's average strike rate would have scored from the same balls.</dd>
+      <dt>Runs saved</dt>
+      <dd>The team's economy rate minus yours, times your overs.</dd>
+      <dt>Boundary hitter</dt>
+      <dd>Balls faced divided by fours plus sixes.</dd>
+      <dt>Cleanest bowler</dt>
+      <dd>Wides plus no-balls, per over bowled.</dd>
+      <dt>Match notes</dt>
+      <dd>Written each week from the CricClubs scorecard, ball-by-ball commentary and players' T20 records: a short report in each result, and a detailed report behind "Detailed cricinfo report". The impact player of the match comes from the same impact points.</dd>
+      <dt>Corrections</dt>
+      <dd>Nov 1 vs GSCC Bears: Govardhan Mucharla played in place of Shankar Ganesan. The CricClubs scorecard still lists Shankar, so the dashboard credits that game's innings and appearance to Govardhan. The keeper's catch the scorecard gives Bharadwaj Jagannath in that game was also Govardhan's, and is credited to him.</dd>
+      <dt>Source</dt>
+      <dd>The team's batting, bowling, fielding and results tabs, plus each match's scorecard and ball-by-ball, on <a href="https://www.nccacricket.org/NCCA/teams/8-Uyz43lEVXIsjehnJTYZw?seriesId=pBhfLhYmojw8tJlgU4hyfg&amp;teamName=Sunnyvale+CC&amp;seriesName=2026+Winter+T20+PB" target="_blank" rel="noopener">nccacricket.org</a> (CricClubs). Refreshed weekly.</dd>
+    </dl>
+  </details>
+  <div class="sv-dialog" id="sv-board-dialog" popover="auto" role="dialog" aria-label="Full rankings">
+    <div class="sv-dialog-head">
+      <span class="sv-dialog-kicker">Full rankings · eligible players</span>
+      <button type="button" class="sv-dialog-close" popovertarget="sv-board-dialog" popovertargetaction="hide" aria-label="Close">×</button>
+    </div>
+    <div class="sv-dialog-body" data-draw="fullboard" data-source="mvp boundaries runs sixes fours bat_sr busy pace bpb hs wkts dots econ bowl_sr dot_pct runs_saved clean catches dismissals"></div>
+  </div>
+
+  <div class="sv-dialog sv-report" id="sv-report-dialog" popover="auto" role="dialog" aria-label="Match report">
+    <div class="sv-dialog-head">
+      <span class="sv-dialog-kicker">Detailed match report</span>
+      <button type="button" class="sv-dialog-close" popovertarget="sv-report-dialog" popovertargetaction="hide" aria-label="Close">×</button>
+    </div>
+    <div class="sv-dialog-body" data-draw="report" data-source="results match_mvp"></div>
+  </div>
+</div>
+</main>
+<footer class="site-foot">Stats from the public scorecards on <a href="https://www.nccacricket.org/NCCA/teams/8-Uyz43lEVXIsjehnJTYZw?seriesId=pBhfLhYmojw8tJlgU4hyfg&amp;teamName=Sunnyvale+CC&amp;seriesName=2026+Winter+T20+PB" rel="noopener">nccacricket.org</a> (CricClubs), with the captain's corrections. Updated every Monday.</footer>
+<script>
+(() => {
+
+  dash.calc('qual', {
+    inputs: ['batting', 'bowling', 'results'],
+    title: 'Minimums and team rates',
+    description: 'Sample sizes needed for rate boards, plus the team strike rate and economy.',
+    fn: (batting, bowling, results) => {
+      const BALLS_PER_MATCH = 8, BALLS_CAP = 60, OVERS_PER_MATCH = 2, OVERS_CAP = 12, BUSY_MIN_BALLS = 16, DOT_MIN_OVERS = 3;
+      const ballsOf = (o) => { const [w, p = '0'] = String(o).split('.'); return Number(w) * 6 + Number(p); };
+      const matches = results.length;
+      const batRuns = batting.reduce((s, b) => s + b.runs, 0);
+      const batBalls = batting.reduce((s, b) => s + b.balls, 0);
+      const bowlRuns = bowling.reduce((s, b) => s + b.runs, 0);
+      const bowlBalls = bowling.reduce((s, b) => s + ballsOf(b.overs), 0);
+      return [{
+        matches,
+        min_balls: Math.min(BALLS_CAP, Math.max(15, BALLS_PER_MATCH * matches)),
+        min_overs: Math.min(OVERS_CAP, Math.max(3, OVERS_PER_MATCH * matches)),
+        balls_per_match: BALLS_PER_MATCH, balls_cap: BALLS_CAP, overs_per_match: OVERS_PER_MATCH, overs_cap: OVERS_CAP,
+        busy_min_balls: BUSY_MIN_BALLS, dot_min_overs: DOT_MIN_OVERS,
+        team_sr: batBalls ? Math.round(1000 * batRuns / batBalls) / 10 : 0,
+        team_econ: bowlBalls ? Math.round(600 * bowlRuns / bowlBalls) / 100 : 0,
+      }];
+    },
+  });
+
+  dash.calc('record', {
+    inputs: ['results'],
+    title: 'Season record',
+    description: 'Matches played, won and lost, and the latest match date.',
+    fn: (results) => {
+      const last = results.map((r) => r.date).sort().pop();
+      return [{
+        played: results.length,
+        won: results.filter((r) => r.outcome === 'won').length,
+        lost: results.filter((r) => r.outcome === 'lost').length,
+        through: last ? new Date(last + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' }) : '',
+      }];
+    },
+  });
+
+  dash.calc('impact_rules', {
+    inputs: ['results'],
+    title: 'Impact point values',
+    description: 'The fixed values the impact points use: wicket value by batting position, fielding values and pace-factor limits.',
+    fn: (results) => [{
+      wicket_top: 25, wicket_mid: 18, wicket_tail: 10,
+      catch: 8, stumping: 12, ro_direct: 12, ro_indirect: 6,
+      pace_min: 0.5, pace_max: 1.5,
+      matches: results.length,
+    }],
+  });
+
+  dash.calc('impact_match', {
+    inputs: ['innings', 'spells', 'match_fielding', 'results', 'impact_rules'],
+    title: 'Impact points by match',
+    description: 'Each player\'s batting, bowling and fielding impact in each match, on a one-point-per-run scale.',
+    fn: (innings, spells, match_fielding, results, impact_rules) => {
+      const v = impact_rules[0];
+      const par = {};
+      results.forEach((m) => { par[m.date] = m.match_runs / m.match_balls; });
+      const acc = {};
+      const row = (date, player) => (acc[date + '|' + player] = acc[date + '|' + player] || { date, player, bat: 0, bowl: 0, field: 0 });
+      innings.forEach((b) => {
+        if (!b.balls || !par[b.date]) return;
+        const pace = Math.min(v.pace_max, Math.max(v.pace_min, Math.sqrt((b.runs / b.balls) / par[b.date])));
+        row(b.date, b.player).bat += b.runs * pace;
+      });
+      spells.forEach((s) => {
+        if (!par[s.date]) return;
+        const wickets = s.wkts_top * v.wicket_top + s.wkts_mid * v.wicket_mid + s.wkts_tail * v.wicket_tail;
+        const runsSaved = par[s.date] * s.balls - s.runs;
+        row(s.date, s.player).bowl += wickets + runsSaved;
+      });
+      match_fielding.forEach((f) => {
+        row(f.date, f.player).field += (f.catches + f.wk_catches) * v.catch + f.stumpings * v.stumping + f.ro_direct * v.ro_direct + f.ro_indirect * v.ro_indirect;
+      });
+      const r1 = (x) => Math.round(10 * x) / 10;
+      return Object.values(acc).map((r) => ({ date: r.date, player: r.player, bat: r1(r.bat), bowl: r1(r.bowl), field: r1(r.field), total: r1(r.bat + r.bowl + r.field) }));
+    },
+  });
+
+  dash.calc('mvp', {
+    inputs: ['impact_match'],
+    title: 'Season MVP',
+    description: 'Players ranked by total impact points this season.',
+    fn: (impact_match) => {
+      const by = {};
+      impact_match.forEach((m) => {
+        const p = (by[m.player] = by[m.player] || { player: m.player, bat: 0, bowl: 0, field: 0 });
+        p.bat += m.bat; p.bowl += m.bowl; p.field += m.field;
+      });
+      const out = Object.values(by)
+        .map((p) => ({ player: p.player, value: Math.round(p.bat + p.bowl + p.field), detail: `Bat ${Math.round(p.bat)} · Bowl ${Math.round(p.bowl)} · Field ${Math.round(p.field)}` }))
+        .sort((a, b) => b.value - a.value || a.player.localeCompare(b.player));
+      out.forEach((r, i) => { r.rank = i && out[i - 1].value === r.value ? out[i - 1].rank : i + 1; });
+      return out;
+    },
+  });
+
+  dash.calc('match_mvp', {
+    inputs: ['impact_match'],
+    title: 'Impact player of each match',
+    description: 'The Sunnyvale player with the most impact points in each match.',
+    fn: (impact_match) => {
+      const best = {};
+      impact_match.forEach((m) => { if (!best[m.date] || m.total > best[m.date].total) best[m.date] = m; });
+      return Object.values(best).map((m) => ({ date: m.date, player: m.player, value: Math.round(m.total) }));
+    },
+  });
+
+  dash.calc('runs', {
+    inputs: ['batting'],
+    title: 'Most runs',
+    description: 'Players ranked by runs scored.',
+    fn: (batting) => {
+      const out = batting.filter((b) => b.runs > 0)
+        .map((b) => ({ player: b.player, value: b.runs, detail: `${b.balls} balls · ${b.inns} inns` }))
+        .sort((a, b) => b.value - a.value || a.player.localeCompare(b.player));
+      out.forEach((r, i) => { r.rank = i && out[i - 1].value === r.value ? out[i - 1].rank : i + 1; });
+      return out;
+    },
+  });
+
+  dash.calc('sixes', {
+    inputs: ['batting'],
+    title: 'Most sixes',
+    description: 'Players ranked by sixes hit.',
+    fn: (batting) => {
+      const out = batting.filter((b) => b.sixes > 0)
+        .map((b) => ({ player: b.player, value: b.sixes, detail: `${b.runs} runs` }))
+        .sort((a, b) => b.value - a.value || a.player.localeCompare(b.player));
+      out.forEach((r, i) => { r.rank = i && out[i - 1].value === r.value ? out[i - 1].rank : i + 1; });
+      return out;
+    },
+  });
+
+  dash.calc('fours', {
+    inputs: ['batting'],
+    title: 'Most fours',
+    description: 'Players ranked by fours hit.',
+    fn: (batting) => {
+      const out = batting.filter((b) => b.fours > 0)
+        .map((b) => ({ player: b.player, value: b.fours, detail: `${b.runs} runs` }))
+        .sort((a, b) => b.value - a.value || a.player.localeCompare(b.player));
+      out.forEach((r, i) => { r.rank = i && out[i - 1].value === r.value ? out[i - 1].rank : i + 1; });
+      return out;
+    },
+  });
+
+  dash.calc('boundaries', {
+    inputs: ['batting'],
+    title: 'Most boundaries',
+    description: 'Players ranked by fours plus sixes hit.',
+    fn: (batting) => {
+      const out = batting.filter((b) => b.fours + b.sixes > 0)
+        .map((b) => ({ player: b.player, value: b.fours + b.sixes, detail: `${b.fours} 4s · ${b.sixes} 6s` }))
+        .sort((a, b) => b.value - a.value || a.player.localeCompare(b.player));
+      out.forEach((r, i) => { r.rank = i && out[i - 1].value === r.value ? out[i - 1].rank : i + 1; });
+      return out;
+    },
+  });
+
+  dash.calc('bat_sr', {
+    inputs: ['batting', 'qual'],
+    title: 'Batting strike rate',
+    description: 'Runs per 100 balls; players under the balls-faced minimum are listed as not yet eligible.',
+    fn: (batting, qual) => {
+      const min = qual[0].min_balls;
+      const needBalls = (n) => `needs ${n} more ball${n === 1 ? '' : 's'}`;
+      const rows = batting.filter((b) => b.balls > 0).map((b) => ({
+        player: b.player, value: Math.round(1000 * b.runs / b.balls) / 10, detail: `${b.runs} off ${b.balls}`,
+        eligible: b.balls >= min, gap: Math.max(0, min - b.balls), need: b.balls >= min ? '' : needBalls(min - b.balls),
+      }));
+      const out = rows.filter((r) => r.eligible).sort((a, b) => b.value - a.value || a.player.localeCompare(b.player));
+      out.forEach((r, i) => { r.rank = i && out[i - 1].value === r.value ? out[i - 1].rank : i + 1; });
+      return [...out, ...rows.filter((r) => !r.eligible).sort((a, b) => a.gap - b.gap || a.player.localeCompare(b.player))];
+    },
+  });
+
+  dash.calc('busy', {
+    inputs: ['innings', 'qual'],
+    title: 'Busiest batter',
+    description: 'Dot balls faced per 6 balls faced, from the ball-by-ball commentary; players under the minimum are listed as not yet eligible.',
+    fn: (innings, qual) => {
+      const min = qual[0].busy_min_balls;
+      const needBalls = (n) => `needs ${n} more ball${n === 1 ? '' : 's'}`;
+      const by = {};
+      innings.forEach((i) => {
+        const p = (by[i.player] = by[i.player] || { player: i.player, balls: 0, dots: 0 });
+        p.balls += i.balls; p.dots += i.dots;
+      });
+      const rows = Object.values(by).filter((p) => p.balls > 0).map((p) => ({
+        player: p.player, value: Math.round(600 * p.dots / p.balls) / 100, detail: `${p.dots} dots in ${p.balls} balls`,
+        eligible: p.balls >= min, gap: Math.max(0, min - p.balls), need: p.balls >= min ? '' : needBalls(min - p.balls),
+      }));
+      const out = rows.filter((r) => r.eligible).sort((a, b) => a.value - b.value || a.player.localeCompare(b.player));
+      out.forEach((r, i) => { r.rank = i && out[i - 1].value === r.value ? out[i - 1].rank : i + 1; });
+      return [...out, ...rows.filter((r) => !r.eligible).sort((a, b) => a.gap - b.gap || a.player.localeCompare(b.player))];
+    },
+  });
+
+  dash.calc('pace', {
+    inputs: ['batting', 'qual'],
+    title: 'Runs above team pace',
+    description: "Runs minus what the team's average strike rate would score from the same balls.",
+    fn: (batting, qual) => {
+      const teamSr = qual[0].team_sr;
+      const out = batting.filter((b) => b.balls > 0)
+        .map((b) => ({ player: b.player, value: Math.round(10 * (b.runs - teamSr / 100 * b.balls)) / 10, detail: `${b.runs} off ${b.balls}` }))
+        .sort((a, b) => b.value - a.value || a.player.localeCompare(b.player));
+      out.forEach((r, i) => { r.rank = i && out[i - 1].value === r.value ? out[i - 1].rank : i + 1; });
+      return out;
+    },
+  });
+
+  dash.calc('bpb', {
+    inputs: ['batting', 'qual'],
+    title: 'Balls per boundary',
+    description: 'Balls faced per four or six; players under the balls-faced minimum or without a boundary are listed as not yet eligible.',
+    fn: (batting, qual) => {
+      const min = qual[0].min_balls;
+      const needBalls = (n) => `needs ${n} more ball${n === 1 ? '' : 's'}`;
+      const rows = batting.filter((b) => b.balls > 0).map((b) => {
+        const hits = b.fours + b.sixes;
+        const ok = b.balls >= min && hits > 0;
+        return {
+          player: b.player, value: hits ? Math.round(10 * b.balls / hits) / 10 : null, detail: `${hits} boundaries in ${b.balls} balls`,
+          eligible: ok, gap: Math.max(0, min - b.balls) + (hits ? 0 : 1),
+          need: ok ? '' : b.balls < min ? needBalls(min - b.balls) : 'needs a first boundary',
+        };
+      });
+      const out = rows.filter((r) => r.eligible).sort((a, b) => a.value - b.value || a.player.localeCompare(b.player));
+      out.forEach((r, i) => { r.rank = i && out[i - 1].value === r.value ? out[i - 1].rank : i + 1; });
+      return [...out, ...rows.filter((r) => !r.eligible).sort((a, b) => a.gap - b.gap || a.player.localeCompare(b.player))];
+    },
+  });
+
+  dash.calc('hs', {
+    inputs: ['innings'],
+    title: 'Highest score',
+    description: 'Single innings ranked by runs; one player can appear more than once.',
+    fn: (innings) => {
+      const day = (d) => new Date(d + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
+      const out = innings.filter((i) => i.runs > 0)
+        .map((i) => ({ player: i.player, date: i.date, value: i.runs, not_out: i.not_out, detail: `off ${i.balls} · vs ${i.opponent}, ${day(i.date)}` }))
+        .sort((a, b) => b.value - a.value || a.date.localeCompare(b.date) || a.player.localeCompare(b.player));
+      out.forEach((r, i) => { r.rank = i && out[i - 1].value === r.value ? out[i - 1].rank : i + 1; });
+      return out;
+    },
+  });
+
+  dash.calc('wkts', {
+    inputs: ['bowling'],
+    title: 'Most wickets',
+    description: 'Players ranked by wickets taken.',
+    fn: (bowling) => {
+      const out = bowling.filter((b) => b.wkts > 0)
+        .map((b) => ({ player: b.player, value: b.wkts, detail: `${b.overs} ov · best ${b.bbf}` }))
+        .sort((a, b) => b.value - a.value || a.player.localeCompare(b.player));
+      out.forEach((r, i) => { r.rank = i && out[i - 1].value === r.value ? out[i - 1].rank : i + 1; });
+      return out;
+    },
+  });
+
+  dash.calc('dots', {
+    inputs: ['bowling'],
+    title: 'Most dot balls',
+    description: 'Players ranked by dot balls bowled.',
+    fn: (bowling) => {
+      const out = bowling.filter((b) => b.dots > 0)
+        .map((b) => ({ player: b.player, value: b.dots, detail: `in ${b.overs} ov` }))
+        .sort((a, b) => b.value - a.value || a.player.localeCompare(b.player));
+      out.forEach((r, i) => { r.rank = i && out[i - 1].value === r.value ? out[i - 1].rank : i + 1; });
+      return out;
+    },
+  });
+
+  dash.calc('econ', {
+    inputs: ['bowling', 'qual'],
+    title: 'Economy rate',
+    description: 'Runs conceded per over; bowlers under the overs minimum are listed as not yet eligible.',
+    fn: (bowling, qual) => {
+      const ballsOf = (o) => { const [w, p = '0'] = String(o).split('.'); return Number(w) * 6 + Number(p); };
+      const needOv = (n) => (n % 6 === 0 ? `needs ${n / 6} more over${n === 6 ? '' : 's'}` : `needs ${n} more ball${n === 1 ? '' : 's'}`);
+      const min = qual[0].min_overs * 6;
+      const rows = bowling.filter((b) => ballsOf(b.overs) > 0).map((b) => {
+        const balls = ballsOf(b.overs);
+        return {
+          player: b.player, value: Math.round(600 * b.runs / balls) / 100, detail: `${b.runs} runs in ${b.overs} ov`,
+          eligible: balls >= min, gap: Math.max(0, min - balls), need: balls >= min ? '' : needOv(min - balls),
+        };
+      });
+      const out = rows.filter((r) => r.eligible).sort((a, b) => a.value - b.value || a.player.localeCompare(b.player));
+      out.forEach((r, i) => { r.rank = i && out[i - 1].value === r.value ? out[i - 1].rank : i + 1; });
+      return [...out, ...rows.filter((r) => !r.eligible).sort((a, b) => a.gap - b.gap || a.player.localeCompare(b.player))];
+    },
+  });
+
+  dash.calc('bowl_sr', {
+    inputs: ['bowling', 'qual'],
+    title: 'Bowling strike rate',
+    description: 'Balls bowled per wicket; bowlers under the overs minimum or without a wicket are listed as not yet eligible.',
+    fn: (bowling, qual) => {
+      const ballsOf = (o) => { const [w, p = '0'] = String(o).split('.'); return Number(w) * 6 + Number(p); };
+      const needOv = (n) => (n % 6 === 0 ? `needs ${n / 6} more over${n === 6 ? '' : 's'}` : `needs ${n} more ball${n === 1 ? '' : 's'}`);
+      const min = qual[0].min_overs * 6;
+      const rows = bowling.filter((b) => ballsOf(b.overs) > 0).map((b) => {
+        const balls = ballsOf(b.overs);
+        const ok = balls >= min && b.wkts > 0;
+        return {
+          player: b.player, value: b.wkts ? Math.round(10 * balls / b.wkts) / 10 : null, detail: `${b.wkts} wkts in ${b.overs} ov`,
+          eligible: ok, gap: Math.max(0, min - balls) + (b.wkts ? 0 : 1),
+          need: ok ? '' : balls < min ? needOv(min - balls) : 'needs a first wicket',
+        };
+      });
+      const out = rows.filter((r) => r.eligible).sort((a, b) => a.value - b.value || a.player.localeCompare(b.player));
+      out.forEach((r, i) => { r.rank = i && out[i - 1].value === r.value ? out[i - 1].rank : i + 1; });
+      return [...out, ...rows.filter((r) => !r.eligible).sort((a, b) => a.gap - b.gap || a.player.localeCompare(b.player))];
+    },
+  });
+
+  dash.calc('dot_pct', {
+    inputs: ['bowling', 'qual'],
+    title: 'Dot ball percentage',
+    description: 'Share of balls bowled that were dots; bowlers under its own fixed overs minimum are listed as not yet eligible.',
+    fn: (bowling, qual) => {
+      const ballsOf = (o) => { const [w, p = '0'] = String(o).split('.'); return Number(w) * 6 + Number(p); };
+      const needOv = (n) => (n % 6 === 0 ? `needs ${n / 6} more over${n === 6 ? '' : 's'}` : `needs ${n} more ball${n === 1 ? '' : 's'}`);
+      const min = qual[0].dot_min_overs * 6;
+      const rows = bowling.filter((b) => ballsOf(b.overs) > 0).map((b) => {
+        const balls = ballsOf(b.overs);
+        return {
+          player: b.player, value: Math.round(100 * b.dots / balls), detail: `${b.dots} of ${balls} balls`,
+          eligible: balls >= min, gap: Math.max(0, min - balls), need: balls >= min ? '' : needOv(min - balls),
+        };
+      });
+      const out = rows.filter((r) => r.eligible).sort((a, b) => b.value - a.value || a.player.localeCompare(b.player));
+      out.forEach((r, i) => { r.rank = i && out[i - 1].value === r.value ? out[i - 1].rank : i + 1; });
+      return [...out, ...rows.filter((r) => !r.eligible).sort((a, b) => a.gap - b.gap || a.player.localeCompare(b.player))];
+    },
+  });
+
+  dash.calc('runs_saved', {
+    inputs: ['bowling', 'qual'],
+    title: 'Runs saved',
+    description: "Runs conceded below the team's economy rate, given the overs bowled.",
+    fn: (bowling, qual) => {
+      const ballsOf = (o) => { const [w, p = '0'] = String(o).split('.'); return Number(w) * 6 + Number(p); };
+      const teamEcon = qual[0].team_econ;
+      const out = bowling.filter((b) => ballsOf(b.overs) > 0)
+        .map((b) => ({ player: b.player, value: Math.round(10 * (teamEcon * ballsOf(b.overs) / 6 - b.runs)) / 10, detail: `econ ${(6 * b.runs / ballsOf(b.overs)).toFixed(2)} in ${b.overs} ov` }))
+        .sort((a, b) => b.value - a.value || a.player.localeCompare(b.player));
+      out.forEach((r, i) => { r.rank = i && out[i - 1].value === r.value ? out[i - 1].rank : i + 1; });
+      return out;
+    },
+  });
+
+  dash.calc('clean', {
+    inputs: ['bowling', 'qual'],
+    title: 'Cleanest bowler',
+    description: 'Wides plus no-balls per over; bowlers under the overs minimum are listed as not yet eligible.',
+    fn: (bowling, qual) => {
+      const ballsOf = (o) => { const [w, p = '0'] = String(o).split('.'); return Number(w) * 6 + Number(p); };
+      const needOv = (n) => (n % 6 === 0 ? `needs ${n / 6} more over${n === 6 ? '' : 's'}` : `needs ${n} more ball${n === 1 ? '' : 's'}`);
+      const min = qual[0].min_overs * 6;
+      const rows = bowling.filter((b) => ballsOf(b.overs) > 0).map((b) => {
+        const balls = ballsOf(b.overs);
+        return {
+          player: b.player, value: Math.round(600 * (b.wides + b.nb) / balls) / 100, detail: `${b.wides + b.nb} extras in ${b.overs} ov`,
+          eligible: balls >= min, gap: Math.max(0, min - balls), need: balls >= min ? '' : needOv(min - balls),
+        };
+      });
+      const out = rows.filter((r) => r.eligible).sort((a, b) => a.value - b.value || a.player.localeCompare(b.player));
+      out.forEach((r, i) => { r.rank = i && out[i - 1].value === r.value ? out[i - 1].rank : i + 1; });
+      return [...out, ...rows.filter((r) => !r.eligible).sort((a, b) => a.gap - b.gap || a.player.localeCompare(b.player))];
+    },
+  });
+
+  dash.calc('catches', {
+    inputs: ['fielding'],
+    title: 'Most catches',
+    description: 'Catches taken in the field or as wicketkeeper.',
+    fn: (fielding) => {
+      const out = fielding.filter((f) => f.catches + f.wk_catches > 0)
+        .map((f) => ({ player: f.player, value: f.catches + f.wk_catches, detail: f.wk_catches ? `${f.wk_catches} as keeper` : '' }))
+        .sort((a, b) => b.value - a.value || a.player.localeCompare(b.player));
+      out.forEach((r, i) => { r.rank = i && out[i - 1].value === r.value ? out[i - 1].rank : i + 1; });
+      return out;
+    },
+  });
+
+  dash.calc('dismissals', {
+    inputs: ['fielding'],
+    title: 'Most dismissals',
+    description: 'Catches, run-outs and stumpings; empty until the team has a run-out or stumping.',
+    fn: (fielding) => {
+      if (!fielding.some((f) => f.direct_ro + f.indirect_ro + f.stumpings > 0)) return [];
+      const out = fielding.filter((f) => f.total > 0)
+        .map((f) => ({ player: f.player, value: f.total, detail: `${f.catches + f.wk_catches} ct · ${f.direct_ro + f.indirect_ro} RO · ${f.stumpings} st` }))
+        .sort((a, b) => b.value - a.value || a.player.localeCompare(b.player));
+      out.forEach((r, i) => { r.rank = i && out[i - 1].value === r.value ? out[i - 1].rank : i + 1; });
+      return out;
+    },
+  });
+
+})();
+</script>
+<script>
+(() => {
+
+  const svFormat = (v, fmt) => {
+    if (v == null || v === '') return '';
+    if (fmt === '1') return Number(v).toFixed(1);
+    if (fmt === '2') return Number(v).toFixed(2);
+    if (fmt === 'plus1') return `${Number(v) > 0 ? '+' : ''}${Number(v).toFixed(1)}`;
+    if (fmt === 'pct') return `${v}%`;
+    if (fmt === 'int') return String(Math.round(Number(v)));
+    return String(v);
+  };
+
+  const SV_NS = 'http://www.w3.org/2000/svg';
+  const svIcon = (rank) => {
+    const svg = document.createElementNS(SV_NS, 'svg');
+    svg.setAttribute('viewBox', '0 0 32 32');
+    svg.setAttribute('aria-hidden', 'true');
+    svg.setAttribute('class', `sv-icon sv-icon-${rank}`);
+    const add = (tag, attrs) => { const e = document.createElementNS(SV_NS, tag); Object.entries(attrs).forEach(([k, val]) => e.setAttribute(k, val)); svg.appendChild(e); };
+    if (rank === 1 || rank === 2) {
+      const c = rank === 1 ? { fill: '#F4C430', dark: '#B8860B', shine: '#FFF3B0' } : { fill: '#CBD2DA', dark: '#7D8792', shine: '#F4F6F8' };
+      add('path', { d: 'M9.5 5.5H5.5v2.5a5 5 0 0 0 5 5', fill: 'none', stroke: c.dark, 'stroke-width': '2', 'stroke-linecap': 'round' });
+      add('path', { d: 'M22.5 5.5h4v2.5a5 5 0 0 1-5 5', fill: 'none', stroke: c.dark, 'stroke-width': '2', 'stroke-linecap': 'round' });
+      add('path', { d: 'M9 3.5h14v7.5a7 7 0 0 1-14 0z', fill: c.fill, stroke: c.dark, 'stroke-width': '1.2' });
+      add('path', { d: 'M12 6v4.5a4 4 0 0 0 2 3.4', fill: 'none', stroke: c.shine, 'stroke-width': '1.4', 'stroke-linecap': 'round' });
+      add('rect', { x: '14.5', y: '17.5', width: '3', height: '4.5', fill: c.dark });
+      add('rect', { x: '10.5', y: '22', width: '11', height: '2.6', rx: '1', fill: c.fill, stroke: c.dark, 'stroke-width': '1' });
+      add('rect', { x: '8.5', y: '24.6', width: '15', height: '3.6', rx: '1', fill: c.dark });
+    } else if (rank === 3) {
+      add('path', { d: 'M9 2h5l3.5 9h-5z', fill: '#2F6FDB' });
+      add('path', { d: 'M23 2h-5l-3.5 9h5z', fill: '#D9473F' });
+      add('circle', { cx: '16', cy: '20', r: '8.5', fill: '#CD7F32', stroke: '#8B5A2B', 'stroke-width': '1.2' });
+      add('circle', { cx: '16', cy: '20', r: '5.6', fill: 'none', stroke: '#F0C29A', 'stroke-width': '1.1' });
+      add('path', { d: 'M16 16.6l1.05 2.1 2.3.33-1.67 1.62.4 2.3L16 21.86l-2.08 1.09.4-2.3-1.67-1.62 2.3-.33z', fill: '#F0C29A' });
+    }
+    return svg;
+  };
+
+  dash.draw('num', (el) => {
+    const d = dash.data(el.dataset.source);
+    const row = d.status === 'ok' ? d.data[Number(el.dataset.row || 0)] : null;
+    const v = row ? row[el.dataset.field] : null;
+    el.textContent = v == null || v === '' ? '—' : svFormat(v, el.dataset.fmt);
+  });
+
+  dash.draw('board', (tbody) => {
+    const table = tbody.closest('table');
+    const d = dash.data(table.dataset.source);
+    tbody.classList.toggle('dash-skeleton', d.status === 'loading');
+    const keys = (table.dataset.rowKey || 'player').split(',');
+    const rows = d.status === 'ok' ? d.data.filter((r) => r.rank <= 3) : [];
+    tbody.replaceChildren(...rows.map((r) => {
+      const tr = document.createElement('tr');
+      tr.className = `sv-r${r.rank}${r.not_out ? ' sv-notout' : ''}`;
+      if (keys.length > 1) tr.dataset.key = keys.map((k) => encodeURIComponent(r[k])).join(',');
+      const rank = document.createElement('td');
+      rank.className = 'sv-rank';
+      const label = document.createElement('span');
+      label.className = 'sv-sr';
+      label.textContent = String(r.rank);
+      rank.append(svIcon(r.rank), label);
+      tr.appendChild(rank);
+      [['sv-player', r.player], ['sv-value', svFormat(r.value, table.dataset.fmt)], ['sv-detail', r.detail || '']].forEach(([cls, text]) => {
+        const td = document.createElement('td');
+        td.className = cls;
+        td.textContent = text;
+        tr.appendChild(td);
+      });
+      return tr;
+    }));
+  });
+
+  dash.draw('matches', (box) => {
+    const d = dash.data('results');
+    const mvp = dash.data('match_mvp');
+    box.classList.toggle('dash-skeleton', d.status === 'loading');
+    const wasOpen = new Set([...box.querySelectorAll('details[open]')].map((x) => x.dataset.date));
+    const best = {};
+    if (mvp.status === 'ok') mvp.data.forEach((m) => { best[m.date] = m; });
+    const day = (s) => new Date(s + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
+    const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+    const rows = d.status === 'ok' ? [...d.data].sort((a, b) => (a.date < b.date ? 1 : -1)) : [];
+    box.replaceChildren(...rows.map((r) => {
+      const det = el('details', `sv-match ${r.outcome === 'won' ? 'sv-won' : r.outcome === 'lost' ? 'sv-lost' : ''}`);
+      det.dataset.date = r.date;
+      if (wasOpen.has(r.date)) det.open = true;
+      const sum = el('summary');
+      const score = el('span', 'sv-score');
+      score.append(el('span', null, `Us ${r.sunnyvale}`), el('span', null, `Them ${r.opponent_score}`));
+      sum.append(el('span', 'sv-date', day(r.date)), el('span', 'sv-opp', r.opponent), el('span', 'sv-res', r.result), score, el('span', 'sv-chev', '▾'));
+      const body = el('div', 'sv-match-body');
+      if (r.headline) body.appendChild(el('p', 'sv-headline', r.headline));
+      if (r.toss) body.appendChild(el('p', 'sv-toss', r.toss));
+      String(r.summary || '').split('\n\n').filter(Boolean).forEach((para) => body.appendChild(el('p', null, para)));
+      const key = Array.isArray(r.key) ? r.key : [];
+      if (key.length) {
+        body.appendChild(el('h4', null, 'Key contributions'));
+        const ul = el('ul');
+        key.forEach((k) => ul.appendChild(el('li', null, k)));
+        body.appendChild(ul);
+      }
+      const b = best[r.date];
+      if (b) {
+        const pom = el('p', 'sv-pom');
+        pom.append(svIcon(1), el('span', null, 'Impact player of the match: '), el('b', null, b.player), el('span', 'sv-hint', `· ${b.value} pts`));
+        body.appendChild(pom);
+      }
+      const links = el('p', 'sv-links');
+      if (r.report) {
+        const btn = el('button', 'sv-linkbtn', 'Detailed cricinfo report');
+        btn.type = 'button';
+        btn.dataset.reportDate = r.date;
+        links.appendChild(btn);
+      }
+      if (r.scorecard_url) {
+        const a = el('a', null, 'Scorecard and ball-by-ball ↗');
+        a.href = r.scorecard_url; a.target = '_blank'; a.rel = 'noopener';
+        links.appendChild(a);
+      }
+      body.appendChild(links);
+      det.append(sum, body);
+      return det;
+    }));
+  });
+
+  const svDay = (s, long) => new Date(s + 'T12:00:00Z').toLocaleDateString('en-US', long ? { weekday: 'long', month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' } : { month: 'short', day: 'numeric', timeZone: 'UTC' });
+  const svEl = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+  window.svState = window.svState || { card: 'board-mvp', report: null };
+
+  dash.draw('fullboard', (el) => {
+    const card = document.getElementById(window.svState.card) || document.getElementById('board-mvp');
+    const table = card ? card.querySelector('table[data-board]') : null;
+    if (!table) { el.replaceChildren(); return; }
+    const id = table.dataset.source;
+    const fmt = table.dataset.fmt;
+    const keyCols = (table.dataset.rowKey || 'player').split(',');
+    const d = dash.data(id);
+    const rows = d.status === 'ok' ? d.data : [];
+    const ranked = rows.filter((r) => r.rank != null);
+    const waiting = rows.filter((r) => r.rank == null && r.eligible === false);
+    const h3 = card.querySelector('h3');
+    const first = h3 && h3.firstChild && h3.firstChild.nodeType === 3 ? h3.firstChild.textContent.trim() : (h3 ? h3.textContent.trim() : '');
+    const valueHead = (table.querySelector('th[data-field="value"]') || {}).textContent || 'Value';
+    const note = card.querySelector('.sv-note');
+    const parts = [svEl('h2', 'sv-full-title', first)];
+    if (note) parts.push(svEl('p', 'sv-full-note', note.textContent.replace(/\s+/g, ' ').trim()));
+    parts.push(svEl('p', 'sv-full-count', d.status === 'ok' ? `${ranked.length} ranked player${ranked.length === 1 ? '' : 's'}${waiting.length ? ` · ${waiting.length} not yet eligible` : ''}` : ''));
+    const mkTable = (list, withRank, extraNeed) => {
+      const t = svEl('table', `sv-full${withRank ? '' : ' sv-waiting'}`);
+      t.dataset.source = id;
+      t.dataset.rowKey = keyCols.join(',');
+      const head = svEl('thead');
+      const hr = svEl('tr');
+      const cols = [];
+      if (withRank) cols.push(['rank', 'Rank', 'sv-rank-h']);
+      cols.push(['player', 'Player', '']);
+      cols.push(['value', valueHead, 'sv-num']);
+      cols.push(['detail', 'Details', 'sv-detail-h']);
+      if (extraNeed) cols.push(['need', 'To qualify', '']);
+      cols.forEach(([f, label, cls]) => { const th = svEl('th', cls, label); th.dataset.field = f; hr.appendChild(th); });
+      head.appendChild(hr);
+      const tb = svEl('tbody');
+      list.forEach((r) => {
+        const tr = svEl('tr', `${withRank ? `sv-r${r.rank}` : ''}${r.not_out ? ' sv-notout' : ''}`);
+        if (keyCols.length > 1) tr.dataset.key = keyCols.map((k) => encodeURIComponent(r[k])).join(',');
+        if (withRank) {
+          const td = svEl('td', 'sv-rank');
+          if (r.rank <= 3) { td.append(svIcon(r.rank), svEl('span', 'sv-sr', String(r.rank))); } else { td.textContent = String(r.rank); }
+          tr.appendChild(td);
+        }
+        tr.append(svEl('td', 'sv-player', r.player), svEl('td', 'sv-value', r.value == null ? '—' : svFormat(r.value, fmt)), svEl('td', 'sv-detail', r.detail || ''));
+        if (extraNeed) tr.appendChild(svEl('td', 'sv-need', r.need || ''));
+        tb.appendChild(tr);
+      });
+      t.append(head, tb);
+      return t;
+    };
+    if (ranked.length) parts.push(mkTable(ranked, true, false));
+    else if (d.status === 'ok') parts.push(svEl('p', 'sv-full-note', 'Nobody is on this board yet.'));
+    if (waiting.length) {
+      parts.push(svEl('h3', 'sv-full-sub', 'Not yet eligible'));
+      parts.push(mkTable(waiting, false, true));
+    }
+    el.replaceChildren(...parts);
+  });
+
+  dash.draw('report', (el) => {
+    const d = dash.data('results');
+    const mvp = dash.data('match_mvp');
+    const rows = d.status === 'ok' ? [...d.data].sort((a, b) => (a.date < b.date ? 1 : -1)) : [];
+    const r = rows.find((x) => x.date === window.svState.report) || rows[0];
+    if (!r) { el.replaceChildren(); return; }
+    const best = mvp.status === 'ok' ? mvp.data.find((m) => m.date === r.date) : null;
+    const parts = [
+      svEl('p', 'sv-rep-meta', `${svDay(r.date, true)}${r.venue ? ` · ${r.venue}` : ''} · ${r.result}`),
+      svEl('h2', 'sv-rep-head', r.headline || ''),
+    ];
+    if (r.standfirst) parts.push(svEl('p', 'sv-rep-stand', r.standfirst));
+    const score = svEl('p', 'sv-rep-score');
+    score.append(svEl('span', null, `Sunnyvale CC ${r.sunnyvale}`), svEl('span', null, `${r.opponent} ${r.opponent_score}`));
+    parts.push(score);
+    const body = svEl('div', 'sv-rep-body');
+    String(r.report || '').split('\n\n').filter(Boolean).forEach((para) => body.appendChild(svEl('p', null, para)));
+    parts.push(body);
+    const foot = svEl('div', 'sv-rep-foot');
+    if (r.toss) foot.appendChild(svEl('p', null, `Toss: ${r.toss}`));
+    if (r.official_pom) foot.appendChild(svEl('p', null, `Player of the match (CricClubs): ${r.official_pom}`));
+    if (best) foot.appendChild(svEl('p', null, `Impact player of the match: ${best.player} · ${best.value} pts`));
+    if (r.scorecard_url) {
+      const p = svEl('p');
+      const a = svEl('a', null, 'Scorecard and ball-by-ball on CricClubs ↗');
+      a.href = r.scorecard_url; a.target = '_blank'; a.rel = 'noopener';
+      p.appendChild(a);
+      foot.appendChild(p);
+    }
+    parts.push(foot);
+    el.replaceChildren(...parts);
+  });
+
+  const svShow = (id) => document.querySelectorAll(`#${id}`).forEach((p) => { if (p.showPopover && !p.matches(':popover-open')) p.showPopover(); });
+  document.querySelectorAll('.sv').forEach((root) => root.addEventListener('click', (e) => {
+    const t = e.target;
+    const rep = t.closest('[data-report-date]');
+    if (rep) {
+      window.svState.report = rep.dataset.reportDate;
+      dash.draw('report');
+      svShow('sv-report-dialog');
+      return;
+    }
+    if (t.closest('[popover], a, summary')) return;
+    const card = t.closest('.sv-card');
+    if (card && card.querySelector('table[data-board]')) {
+      window.svState.card = card.id;
+      dash.draw('fullboard');
+      svShow('sv-board-dialog');
+    }
+  }));
+
+  dash.onData(() => {
+    document.querySelectorAll('table[data-board]').forEach((t) => {
+      const d = dash.data(t.dataset.source);
+      const empty = d.status === 'ok' && !d.data.some((r) => r.rank <= 3);
+      const card = t.closest('.sv-card');
+      if (card) card.querySelectorAll('.sv-empty').forEach((p) => { p.hidden = !empty; });
+    });
+    const dm = dash.data('dismissals');
+    document.querySelectorAll('#board-dismissals').forEach((c) => { c.hidden = !(dm.status === 'ok' && dm.data.length > 0); });
+    document.querySelectorAll('#fielding').forEach((s) => { s.hidden = !(dm.status === 'ok' && dm.data.length > 0); });
+  });
+
+})();
+</script>
+</body>
+</html>
