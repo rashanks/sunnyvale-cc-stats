@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-version="202611090942">
+<html lang="en" data-version="202611090954">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -241,6 +241,19 @@
   .sv-rep-score { padding: 8px 0; border-top: 1px solid var(--color-border-line); border-bottom: 1px solid var(--color-border-line); font-size: var(--cds-font-size-body); }
   .sv-rep-body p { font-family: var(--font-anthropic-serif); font-size: 1.05rem; line-height: 1.65; }
   .sv-notes summary { font-family: var(--font-anthropic-serif); font-size: 1.2rem; }
+
+  /* Results as clickable match cards (2026-11-09): the whole card opens the match report pop-up. */
+  .sv-matches { gap: var(--cds-gap-md); }
+  .sv-match { display: grid; grid-template-columns: auto minmax(0, 1fr); grid-template-areas: "date opp" "date res" "date score" "date cta"; column-gap: var(--cds-gap-md); row-gap: 2px; width: 100%; margin: 0; padding: 8px 10px 8px 12px; text-align: left; font: inherit; color: inherit; background: none; border: 0; border-left: 4px solid var(--color-border-line); border-radius: 0 2px 2px 0; cursor: pointer; transition: background-color var(--cds-dur-slow); }
+  .sv-match.sv-won { border-left-color: var(--color-ok); }
+  .sv-match.sv-lost { border-left-color: var(--color-bad); }
+  .sv-match:hover { background: color-mix(in srgb, var(--color-fg) 5%, transparent); }
+  .sv-match:focus-visible { outline: 2px solid var(--ed-accent); outline-offset: 2px; }
+  .sv-match .sv-cta { grid-area: cta; margin-top: 4px; font-size: var(--cds-font-size-caption); font-weight: 600; color: var(--ed-accent); }
+  .sv-match:hover .sv-cta { text-decoration: underline; }
+  .sv-rep-key h3 { margin: 0 0 var(--cds-gap-xs); font-size: var(--cds-font-size-body); font-weight: 700; }
+  .sv-rep-key ul { margin: 0; padding-left: 1.1rem; display: grid; gap: 4px; font-size: var(--cds-font-size-body); line-height: 1.45; }
+  .sv-rep-more { justify-self: start; min-height: 40px; }
 </style>
 <style>
   [hidden] { display: none !important; }
@@ -283,7 +296,7 @@
 
     <article class="sv-card" id="results">
       <h3>Results</h3>
-      <p class="sv-note">Most recent first. Tap a match for its story and key contributions.</p>
+      <p class="sv-note">Most recent first. Tap a match for its report.</p>
       <div class="sv-matches dash-skeleton" data-draw="matches" data-source="results match_mvp"></div>
     </article>
   </div>
@@ -515,7 +528,7 @@
       <dt>Cleanest bowler</dt>
       <dd>Wides plus no-balls, per over bowled.</dd>
       <dt>Match notes</dt>
-      <dd>Written each week from the CricClubs scorecard, ball-by-ball commentary and players' T20 records: a short report in each result, and a detailed report behind "Detailed cricinfo report". The impact player of the match comes from the same impact points.</dd>
+      <dd>Written each week from the CricClubs scorecard, ball-by-ball commentary and players' T20 records: a short report and a full Cricinfo-style report in each match's pop-up. The impact player of the match comes from the same impact points.</dd>
       <dt>Corrections</dt>
       <dd>Nov 1 vs GSCC Bears: Govardhan Mucharla played in place of Shankar Ganesan. The CricClubs scorecard still lists Shankar, so the dashboard credits that game's innings and appearance to Govardhan. The keeper's catch the scorecard gives Bharadwaj Jagannath in that game was also Govardhan's, and is credited to him.</dd>
       <dt>Source</dt>
@@ -532,7 +545,7 @@
 
   <div class="sv-dialog sv-report" id="sv-report-dialog" popover="auto" role="dialog" aria-label="Match report">
     <div class="sv-dialog-head">
-      <span class="sv-dialog-kicker">Detailed match report</span>
+      <span class="sv-dialog-kicker">Match report</span>
       <button type="button" class="sv-dialog-close" popovertarget="sv-report-dialog" popovertargetaction="hide" aria-label="Close">×</button>
     </div>
     <div class="sv-dialog-body" data-draw="report" data-source="results match_mvp"></div>
@@ -1024,54 +1037,18 @@
 
   dash.draw('matches', (box) => {
     const d = dash.data('results');
-    const mvp = dash.data('match_mvp');
     box.classList.toggle('dash-skeleton', d.status === 'loading');
-    const wasOpen = new Set([...box.querySelectorAll('details[open]')].map((x) => x.dataset.date));
-    const best = {};
-    if (mvp.status === 'ok') mvp.data.forEach((m) => { best[m.date] = m; });
     const day = (s) => new Date(s + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
     const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
     const rows = d.status === 'ok' ? [...d.data].sort((a, b) => (a.date < b.date ? 1 : -1)) : [];
     box.replaceChildren(...rows.map((r) => {
-      const det = el('details', `sv-match ${r.outcome === 'won' ? 'sv-won' : r.outcome === 'lost' ? 'sv-lost' : ''}`);
-      det.dataset.date = r.date;
-      if (wasOpen.has(r.date)) det.open = true;
-      const sum = el('summary');
+      const card = el('button', `sv-match ${r.outcome === 'won' ? 'sv-won' : r.outcome === 'lost' ? 'sv-lost' : ''}`);
+      card.type = 'button';
+      card.dataset.reportDate = r.date;
       const score = el('span', 'sv-score');
       score.append(el('span', null, `Us ${r.sunnyvale}`), el('span', null, `Them ${r.opponent_score}`));
-      sum.append(el('span', 'sv-date', day(r.date)), el('span', 'sv-opp', r.opponent), el('span', 'sv-res', r.result), score, el('span', 'sv-chev', '▾'));
-      const body = el('div', 'sv-match-body');
-      if (r.headline) body.appendChild(el('p', 'sv-headline', r.headline));
-      if (r.toss) body.appendChild(el('p', 'sv-toss', r.toss));
-      String(r.summary || '').split('\n\n').filter(Boolean).forEach((para) => body.appendChild(el('p', null, para)));
-      const key = Array.isArray(r.key) ? r.key : [];
-      if (key.length) {
-        body.appendChild(el('h4', null, 'Key contributions'));
-        const ul = el('ul');
-        key.forEach((k) => ul.appendChild(el('li', null, k)));
-        body.appendChild(ul);
-      }
-      const b = best[r.date];
-      if (b) {
-        const pom = el('p', 'sv-pom');
-        pom.append(svIcon(1), el('span', null, 'Impact player of the match: '), el('b', null, b.player), el('span', 'sv-hint', `· ${b.value} pts`));
-        body.appendChild(pom);
-      }
-      const links = el('p', 'sv-links');
-      if (r.report) {
-        const btn = el('button', 'sv-linkbtn', 'Detailed cricinfo report');
-        btn.type = 'button';
-        btn.dataset.reportDate = r.date;
-        links.appendChild(btn);
-      }
-      if (r.scorecard_url) {
-        const a = el('a', null, 'Scorecard and ball-by-ball ↗');
-        a.href = r.scorecard_url; a.target = '_blank'; a.rel = 'noopener';
-        links.appendChild(a);
-      }
-      body.appendChild(links);
-      det.append(sum, body);
-      return det;
+      card.append(el('span', 'sv-date', day(r.date)), el('span', 'sv-opp', r.opponent), el('span', 'sv-res', r.result), score, el('span', 'sv-cta', 'Click for match report ›'));
+      return card;
     }));
   });
 
@@ -1142,6 +1119,7 @@
     const rows = d.status === 'ok' ? [...d.data].sort((a, b) => (a.date < b.date ? 1 : -1)) : [];
     const r = rows.find((x) => x.date === window.svState.report) || rows[0];
     if (!r) { el.replaceChildren(); return; }
+    const full = !!window.svState.full;
     const best = mvp.status === 'ok' ? mvp.data.find((m) => m.date === r.date) : null;
     const parts = [
       svEl('p', 'sv-rep-meta', `${svDay(r.date, true)}${r.venue ? ` · ${r.venue}` : ''} · ${r.result}`),
@@ -1152,8 +1130,22 @@
     score.append(svEl('span', null, `Sunnyvale CC ${r.sunnyvale}`), svEl('span', null, `${r.opponent} ${r.opponent_score}`));
     parts.push(score);
     const body = svEl('div', 'sv-rep-body');
-    String(r.report || '').split('\n\n').filter(Boolean).forEach((para) => body.appendChild(svEl('p', null, para)));
+    String((full ? r.report : r.summary) || '').split('\n\n').filter(Boolean).forEach((para) => body.appendChild(svEl('p', null, para)));
     parts.push(body);
+    const key = Array.isArray(r.key) ? r.key : [];
+    if (key.length) {
+      const box = svEl('div', 'sv-rep-key');
+      const ul = svEl('ul');
+      key.forEach((k) => ul.appendChild(svEl('li', null, k)));
+      box.append(svEl('h3', null, 'Key contributions'), ul);
+      parts.push(box);
+    }
+    if (r.report && r.summary) {
+      const more = svEl('button', 'sv-linkbtn sv-rep-more', full ? '‹ Back to the short report' : 'Read the full report ›');
+      more.type = 'button';
+      more.dataset.fullReport = full ? 'off' : 'on';
+      parts.push(more);
+    }
     const foot = svEl('div', 'sv-rep-foot');
     if (r.toss) foot.appendChild(svEl('p', null, `Toss: ${r.toss}`));
     if (r.official_pom) foot.appendChild(svEl('p', null, `Player of the match (CricClubs): ${r.official_pom}`));
@@ -1167,14 +1159,22 @@
     }
     parts.push(foot);
     el.replaceChildren(...parts);
+    el.scrollTop = 0;
   });
 
   const svShow = (id) => document.querySelectorAll(`#${id}`).forEach((p) => { if (p.showPopover && !p.matches(':popover-open')) p.showPopover(); });
   document.querySelectorAll('.sv').forEach((root) => root.addEventListener('click', (e) => {
     const t = e.target;
+    const more = t.closest('[data-full-report]');
+    if (more) {
+      window.svState.full = more.dataset.fullReport === 'on';
+      dash.draw('report');
+      return;
+    }
     const rep = t.closest('[data-report-date]');
     if (rep) {
       window.svState.report = rep.dataset.reportDate;
+      window.svState.full = false;
       dash.draw('report');
       svShow('sv-report-dialog');
       return;
