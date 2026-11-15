@@ -58,5 +58,45 @@
   "stumpings": 0,
   "ro_direct": 0,
   "ro_indirect": 0
+ },
+ {
+  "date": "2026-11-14",
+  "opponent": "Santa Clara Pandas",
+  "player": "Bharadwaj Jagannath",
+  "catches": 1,
+  "wk_catches": 0,
+  "stumpings": 0,
+  "ro_direct": 0,
+  "ro_indirect": 0
+ },
+ {
+  "date": "2026-11-14",
+  "opponent": "Santa Clara Pandas",
+  "player": "Ravi Shankar",
+  "catches": 1,
+  "wk_catches": 0,
+  "stumpings": 0,
+  "ro_direct": 0,
+  "ro_indirect": 0
+ },
+ {
+  "date": "2026-11-14",
+  "opponent": "Santa Clara Pandas",
+  "player": "Govardhan Mucharla",
+  "catches": 0,
+  "wk_catches": 1,
+  "stumpings": 1,
+  "ro_direct": 0,
+  "ro_indirect": 0
+ },
+ {
+  "date": "2026-11-14",
+  "opponent": "Santa Clara Pandas",
+  "player": "Arun Subramanian",
+  "catches": 1,
+  "wk_catches": 0,
+  "stumpings": 0,
+  "ro_direct": 1,
+  "ro_indirect": 0
  }
 ]

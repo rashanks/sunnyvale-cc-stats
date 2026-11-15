@@ -141,5 +141,83 @@
   "dots": 3,
   "not_out": 1,
   "how_out": "not out"
+ },
+ {
+  "date": "2026-11-14",
+  "opponent": "Santa Clara Pandas",
+  "pos": 1,
+  "player": "Govardhan Mucharla",
+  "runs": 29,
+  "balls": 42,
+  "fours": 0,
+  "sixes": 2,
+  "dots": 25,
+  "not_out": 0,
+  "how_out": "c †Ananth R b Sujesh P"
+ },
+ {
+  "date": "2026-11-14",
+  "opponent": "Santa Clara Pandas",
+  "pos": 2,
+  "player": "Ankit Mishra",
+  "runs": 48,
+  "balls": 56,
+  "fours": 0,
+  "sixes": 0,
+  "dots": 16,
+  "not_out": 1,
+  "how_out": "not out"
+ },
+ {
+  "date": "2026-11-14",
+  "opponent": "Santa Clara Pandas",
+  "pos": 3,
+  "player": "Bharadwaj Jagannath",
+  "runs": 15,
+  "balls": 14,
+  "fours": 0,
+  "sixes": 1,
+  "dots": 5,
+  "not_out": 0,
+  "how_out": "c †Ananth R b Sandeep S"
+ },
+ {
+  "date": "2026-11-14",
+  "opponent": "Santa Clara Pandas",
+  "pos": 4,
+  "player": "Ravi Shankar",
+  "runs": 4,
+  "balls": 5,
+  "fours": 0,
+  "sixes": 0,
+  "dots": 2,
+  "not_out": 0,
+  "how_out": "c Syed Z b Sujesh P"
+ },
+ {
+  "date": "2026-11-14",
+  "opponent": "Santa Clara Pandas",
+  "pos": 5,
+  "player": "Shankar Ganesan",
+  "runs": 4,
+  "balls": 3,
+  "fours": 0,
+  "sixes": 0,
+  "dots": 0,
+  "not_out": 0,
+  "how_out": "retired out"
+ },
+ {
+  "date": "2026-11-14",
+  "opponent": "Santa Clara Pandas",
+  "pos": 6,
+  "player": "Bilal Ahamad",
+  "runs": 0,
+  "balls": 0,
+  "fours": 0,
+  "sixes": 0,
+  "dots": 0,
+  "not_out": 1,
+  "how_out": "not out"
  }
 ]
